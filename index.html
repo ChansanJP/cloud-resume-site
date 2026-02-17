@@ -1,0 +1,133 @@
+<div class="page">
+  <header class="header">
+    <h1>CHANDLER TUGGLES</h1>
+    <p class="role">IT Support / Cloud Support (Entry-Level)</p>
+
+    <div class="contact">
+      <a href="mailto:Ctuggles5@gmail.com">Ctuggles5@gmail.com</a>
+      <span class="sep">&bull;</span>
+      <a href="https://linkedin.com/in/chandlertuggles" target="_blank" rel="noreferrer">
+        linkedin.com/in/chandlertuggles
+      </a>
+      <span class="sep">&bull;</span>
+      <a href="https://github.com/ChansanJP" target="_blank" rel="noreferrer">
+        github.com/ChansanJP
+      </a>
+      <span class="sep">&bull;</span>
+      <span>Remote &bull; US</span>
+    </div>
+
+    <p class="summary">
+      Technical Support Representative with 2+ years of Tier 1 experience supporting hardware, software,
+      networking, and LMS environments. Building cloud projects on AWS (serverless + CI/CD) with a focus on
+      secure, cost-aware deployments.
+    </p>
+
+<div class="counter">
+  Visitors: <span id="visitor-count">Loading...</span>
+</div>
+
+  </header>
+
+  <main class="main">
+    <section class="section">
+      <h2>Skills</h2>
+      <div class="pills">
+        <span class="pill">Troubleshooting</span>
+        <span class="pill">Ticket Triage</span>
+        <span class="pill">Customer Support</span>
+        <span class="pill">Documentation</span>
+        <span class="pill">Networking Basics</span>
+        <span class="pill">AWS: S3, IAM, CloudFront</span>
+        <span class="pill">AWS: Lambda, DynamoDB, API Gateway</span>
+        <span class="pill">CloudWatch (Logs/Alarms)</span>
+        <span class="pill">Git / GitHub</span>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Projects</h2>
+
+      <div class="card">
+        <div class="card-top">
+          <h3>Cloud Resume Challenge (AWS)</h3>
+          <span class="tag">In progress</span>
+        </div>
+
+        <p class="stack">
+          S3 &bull; CloudFront &bull; Lambda &bull; DynamoDB &bull; API Gateway &bull; IaC &bull; CI/CD
+        </p>
+
+        <ul>
+          <li>Building and deploying a static resume website using S3 + CloudFront with HTTPS.</li>
+          <li>Implementing a visitor counter API using Lambda + DynamoDB exposed via API Gateway.</li>
+          <li>Automating deployments using Infrastructure as Code and GitHub Actions.</li>
+          <li>Adding monitoring (CloudWatch logs/alarms) and cost controls (AWS Budgets alerts).</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-top">
+          <h3>Support Knowledge Base Notes</h3>
+          <span class="tag">Ongoing</span>
+        </div>
+
+        <p class="stack">Troubleshooting &bull; Documentation &bull; Customer Communication</p>
+
+        <ul>
+          <li>Documenting common technical issues, reproduction steps, and clean resolutions for faster support.</li>
+          <li>Writing clear user-facing explanations and internal escalation notes.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Experience</h2>
+
+      <div class="card">
+        <div class="card-top">
+          <h3>Technical Support Representative &bull; Ellucian</h3>
+          <span class="tag">2022 &ndash; 2024</span>
+        </div>
+
+        <ul>
+          <li>Provided Tier 1 support for hardware, software, networking, and Learning Management System issues.</li>
+          <li>Triaged and documented incidents, gathered details, reproduced issues, and escalated with clear notes.</li>
+          <li>Assisted users with registrar, admissions, bursar/student accounts, and financial aid-related inquiries.</li>
+          <li>Focused on customer communication, accuracy, and consistent follow-through until resolution.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Education & Certifications</h2>
+
+      <div class="card">
+        <ul>
+          <li><strong>AWS Certified Cloud Practitioner</strong> &ndash; Completed</li>
+          <li><strong>AWS Solutions Architect Associate</strong> &ndash; In progress</li>
+          <li><strong>AWS Certified AI Practitioner</strong> &ndash; In progress</li>
+          <li><strong>Education</strong> &ndash; Athens Technical College / IT Computer Support</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Last updated: <span id="updated-date"></span></small>
+  </footer>
+</div>
+
+<script>
+const API_URL = "https://bwabcgv331.execute-api.us-east-1.amazonaws.com/prod/count";
+
+fetch(API_URL + "?t=" + Date.now())
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById("visitor-count").textContent = data.count;
+  })
+  .catch(() => {
+    document.getElementById("visitor-count").textContent = "0";
+  });
+</script>
+
