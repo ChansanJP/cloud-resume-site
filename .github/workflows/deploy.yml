@@ -21,16 +21,17 @@ jobs:
 
       - name: Deploy site files to S3
         run: |
-          aws s3 sync . s3://${{ secrets.S3_BUCKET }} --delete ^
-            --exclude ".git/*" ^
-            --exclude ".github/*" ^
-            --exclude "iac/*" ^
-            --exclude "*.md" ^
-            --exclude "*.tfstate*" ^
+          aws s3 sync . "s3://${{ secrets.S3_BUCKET }}" --delete \
+            --exclude ".git/*" \
+            --exclude ".github/*" \
+            --exclude "iac/*" \
+            --exclude "*.md" \
+            --exclude "*.tfstate*" \
             --exclude ".terraform/*"
 
-      - name: Invalidate CloudFront cache
+      - name: Invalidate CloudFront cache (optional)
+        if: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID != '' }}
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+            --distribution-id "${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}" \
             --paths "/*"
